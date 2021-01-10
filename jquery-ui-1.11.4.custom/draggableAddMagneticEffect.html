@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI Draggable restrict</title>
+    <style>
+        .sub{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    //$("#sub1").draggable({revert:true});
+    //$("#sub1").draggable({snap:true, snapTolerance:100});
+    /*here main1 should not be draggable unlike earlier as it aligned to only draggable elements only*/
+    $("#sub1").draggable({snap:"#main1", snapTolerance:20});
+   // $("#sub2, #sub3, #main2").draggable();
+    $("#sub2").draggable({snap:true, snapMode:"outer"});
+    //set snap true then alligned to all elements if set particular item #main1 then only to particular element
+    
+    
+});
+
+</script>
+
+</head>
+<body>
+    <div id="main1" style="height: 300px; width: 500px; border: 2px solid black; margin:0px auto">
+        <div class="sub" id="sub1" style="background: red"></div>
+        <div class="sub" id="sub2" style="background: green"></div>
+        <div class="sub" id="sub3" style="background: blue"></div>
+
+
+    </div>
+    
+    <div id="main2" style="height: 300px; width: 500px; border: 2px solid black; margin:0px auto"></div>
+
+
+</body>
+</html>

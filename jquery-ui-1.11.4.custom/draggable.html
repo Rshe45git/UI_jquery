@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI</title>
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    $('#imp, #box').draggable();
+});
+
+</script>
+
+</head>
+<body>
+    <p>This is my message</p>
+<input type="text" id="calendar" />
+    <div id="box" style="height: 400px; width: 400px; background: pink; border: 1px solid black; margin: 2px;"></div>
+    <p id="imp" style="position: fixed; left: 0; right: 0;">this is a important messahe</p>
+
+
+</body>
+</html>

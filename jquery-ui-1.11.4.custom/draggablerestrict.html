@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI Draggable restrict</title>
+    <style>
+        .sub{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    $('#main').draggable();
+    $('#sub1').draggable({axis:"x"});
+    $('#sub2').draggable({axis:"y"});
+    $('#sub3').draggable({containment:"#main"});
+});
+
+</script>
+
+</head>
+<body>
+    <div id="main" style="height: 500px; width: 500px; border: 2px solid black; margin:0px auto">
+        <div class="sub" id="sub1" style="background: red"></div>
+        <div class="sub" id="sub2" style="background: green"></div>
+        <div class="sub" id="sub3" style="background: blue"></div>
+
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI Draggable restrict</title>
+    <style>
+        .sub{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    //$("#sub1").draggable({revert:true});
+    $("#sub1").draggable({helper:"clone", opacity:.2});
+    $("#sub2").draggable();
+    $("#sub3").draggable({helper:function(){
+        return("<div style='border:2px solid purple; background:black; color:white'>Custom Helper</div>");
+    }});
+    
+});
+
+</script>
+
+</head>
+<body>
+    <div id="main" style="height: 500px; width: 500px; border: 2px solid black; margin:0px auto">
+        <div class="sub" id="sub1" style="background: red"></div>
+        <div class="sub" id="sub2" style="background: green"></div>
+        <div class="sub" id="sub3" style="background: blue"></div>
+
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI Draggable restrict</title>
+    <style>
+        .sub{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    $("#item").draggable();
+    /*$("#area").droppable({tolerance:"touch", drop:function(){
+        alert("item is dropped");
+    }});*/
+    /*$("#area").droppable({tolerance:"fit", drop:function(){
+        alert("item is dropped");
+    }}); by default tolerance option is intersect which means 50% of the body is inside the droppable*/
+    $("#area").droppable({tolerance:"pointer", drop:function(){
+        alert("item is dropped");
+    }});
+    
+});
+
+</script>
+
+</head>
+<body>
+    <div id="item" class="item" style="background: pink; height: 200px; width: 200px; border: 1px solid black; float: left; margin-right: 20px;"></div>
+    
+    
+    <div id="area" style="height: 300px; width: 300px; border: 2px solid purple; float: left; margin-left: 20px; "></div>
+    
+
+
+</body>
+</html>

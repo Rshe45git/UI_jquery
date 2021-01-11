@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI Draggable restrict</title>
+    <style>
+        .sub{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    $("#sub1, #sub2").draggable();
+    $("#sub3").draggable({revert:true, revertDuration:1000});
+    $("#btnDisable").click(function(){
+       $("#sub1").draggable("disable"); 
+    });
+    $("#btnEnable").click(function(){
+        $("#sub1").draggable("enable"); 
+    });
+    $("#btnDestroy").click(function(){
+        $("#sub2").draggable("destroy"); 
+    });
+    /*$("#btnOptions").click(function(){
+        //alert($("#sub3").draggable( "option", "revert")); 
+        //alert($("#sub3").draggable( "option", "revertDuration")); 
+        //alert($("#sub3").draggable( "option", "helper")); 
+        //$("#sub1").draggable( "option", "cursor", "grab"); 
+        var obj=$("#sub3").draggable( "option"); 
+        alert(obj.revert);
+        alert(obj.recertDuration)
+        $.each(obj, function(key, value){
+           alert(key +"=" +value); 
+        });
+    });*/
+    $("#btnSet").click(function(){
+        $("#sub1").draggable( "option", {"cursor":"grab", "revert":true}); 
+    });
+    
+});
+
+</script>
+
+</head>
+<body>
+    <div id="main1" style="height: 200px; width: 500px; border: 2px solid black; margin:0px auto; float: left">
+        <div class="sub" id="sub1" style="background: red"></div>
+        <div class="sub" id="sub2" style="background: green"></div>
+        <div class="sub" id="sub3" style="background: blue"></div>
+
+
+    </div><br />
+    
+    <button id="btnDisable">Disable</button>
+    <button id="btnEnable">Enable</button>
+    <button id="btnDestroy">Destroy</button>
+    <button id="btnGet">Get Option</button>
+    <button id="btnSet">Set option</button>
+    <button id="btnOptions">Get All Option</button>
+
+
+</body>
+</html>

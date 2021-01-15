@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Jquery-UI Draggable restrict</title>
+    
+<link rel="stylesheet" href="jquery-ui.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    /*$("#item").draggable();
+    $("#parent", "#child").droppable({drop:function(){
+       alert("The item is dropped");}});*/
+    alert("item is ready");
+    $("#item").draggable();
+    $("#parent, #child").droppable({greedy:true, drop:function(){
+        alert("The item is dropped in" +$(this).attr("id"));
+    }});
+    
+});
+
+</script>
+
+</head>
+<body>
+    <div id="item"  style="background: pink; height: 100px; width: 100px; border: 1px solid black; float: left; margin-right: 20px;"></div>
+    
+    
+    <div id="parent" style="height: 300px; width: 300px; border: 2px solid purple; float: left; margin-left: 20px; ">
+        <div id="child" style="height: 150px; width: 150px; border: 2px solid grey; float: left; margin-left: 10px;margin-right: 10px; "></div>
+
+    </div>
+    
+
+
+</body>
+</html>
